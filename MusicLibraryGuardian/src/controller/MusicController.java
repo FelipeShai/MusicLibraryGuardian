@@ -1,6 +1,5 @@
 package controller;
 
-// MusicController.java
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -152,7 +151,6 @@ public class MusicController {
         List<Music> favoriteSongs = new ArrayList<>();
         List<Music> randomSongs = new ArrayList<>();
 
-        // Separar músicas favoritas e músicas aleatórias
         for (Music song : allSongs) {
             if (song.isFavorite()) {
                 favoriteSongs.add(song);
@@ -169,7 +167,6 @@ public class MusicController {
 
         List<Music> playlist = new ArrayList<>();
 
-        // Adicionar metade das músicas favoritas à playlist
         int favoriteSongsCount = favoriteSongs.size();
         int randomSongsCount = randomSongs.size();
 
@@ -180,7 +177,6 @@ public class MusicController {
             i++;
         }
 
-        // Adicionar metade das músicas aleatórias à playlist (preenchendo o restante)
         int j = 0;
         while (j < randomSongsCount && currentDuration + randomSongs.get(j).getMinutesDuration() <= maxDuration) {
             playlist.add(randomSongs.get(j));

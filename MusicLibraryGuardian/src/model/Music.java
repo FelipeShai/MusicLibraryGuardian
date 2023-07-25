@@ -17,7 +17,6 @@ public class Music {
         this.secondsDuration = secondsDuration;
         this.isFavorite = isFavorite;
     }
-    // Getters e setters
 
 	public String getTitle() {
 		return title;
