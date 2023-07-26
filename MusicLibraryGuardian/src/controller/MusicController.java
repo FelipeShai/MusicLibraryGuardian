@@ -141,7 +141,7 @@ public class MusicController {
         	view.displayMessage("Search results:");
             for (Music song : results) {
                 view.displayMessage(song.getTitle() + " - " + song.getArtist() +
-                        " (Álbum: " + song.getAlbum().getTitle() + ", Duração: " + song.getMinutesDuration() + ":" + song.getSecondsDuration() + ")");
+                        " (Álbum: " + song.getAlbum().getTitle() + ", Duration: " + song.getMinutesDuration() + ":" + song.getSecondsDuration() + ")");
             }
         }
     }
@@ -162,7 +162,7 @@ public class MusicController {
         Collections.shuffle(randomSongs); 
         Collections.shuffle(favoriteSongs);
 
-        int maxDuration = 60; // Duração máxima da playlist em minutos (1 hora)
+        int maxDuration = 60;
         int currentDuration = 0;
 
         List<Music> playlist = new ArrayList<>();
@@ -187,7 +187,7 @@ public class MusicController {
         view.displayMessage("Playlist Sugerida:");
         for (Music song : playlist) {
             view.displayMessage(song.getTitle() + " - " + song.getArtist() +
-                    " (Álbum: " + song.getAlbum().getTitle() + ", Duração: " +
+                    " (Álbum: " + song.getAlbum().getTitle() + ", Duration: " +
                     song.getMinutesDuration() + "m" + song.getSecondsDuration() + "s)");
         }
     }
