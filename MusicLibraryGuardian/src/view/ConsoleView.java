@@ -1,5 +1,5 @@
 package view;
-//ConsoleView.java
+
 import java.util.Scanner;
 
 public class ConsoleView {
