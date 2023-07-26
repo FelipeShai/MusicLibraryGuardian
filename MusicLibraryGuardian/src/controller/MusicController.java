@@ -141,7 +141,7 @@ public class MusicController {
         	view.displayMessage("Search results:");
             for (Music song : results) {
                 view.displayMessage(song.getTitle() + " - " + song.getArtist() +
-                        " (Álbum: " + song.getAlbum().getTitle() + ", Duration: " + song.getMinutesDuration() + ":" + song.getSecondsDuration() + ")");
+                        " (Album: " + song.getAlbum().getTitle() + ", Duration: " + song.getMinutesDuration() + ":" + song.getSecondsDuration() + ")");
             }
         }
     }
@@ -187,7 +187,7 @@ public class MusicController {
         view.displayMessage("Playlist Sugerida:");
         for (Music song : playlist) {
             view.displayMessage(song.getTitle() + " - " + song.getArtist() +
-                    " (Álbum: " + song.getAlbum().getTitle() + ", Duration: " +
+                    " (Album: " + song.getAlbum().getTitle() + ", Duration: " +
                     song.getMinutesDuration() + "m" + song.getSecondsDuration() + "s)");
         }
     }
