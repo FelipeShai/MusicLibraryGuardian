@@ -23,6 +23,10 @@ public class MusicCollection {
     public List<Music> getAllSongs() {
         return songs;
     }
+    
+    public List<Album> getAllAlbums() {
+        return albums;
+    }
 
     public List<Album> searchAlbums(String searchTerm) {
         List<Album> results = new ArrayList<>();
