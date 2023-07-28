@@ -3,17 +3,15 @@ package tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import view.ConsoleView;
 import controller.MusicController;
 import model.MusicCollection;
-import view.ConsoleView;
 import model.Album;
 import model.Music;
-import static org.mockito.Mockito.*;
 
 import java.util.List;
 
@@ -64,7 +62,36 @@ public class MusicTest {
         assertEquals(1, searchResult2.size());
         assertEquals("The Eminem Show", searchResult2.get(0).getTitle());
     }
-    
+
+    @Test
+    public void testSearchSongs() {
+        MusicCollection collection = new MusicCollection();
+
+        Album album1 = new Album("Album 1", "Artist 1", 2000);
+        Album album2 = new Album("Album 2", "Artist 2", 2010);
+
+        Music music1 = new Music("Song 1", "Artist 1", album1, 3, 30, false);
+        Music music2 = new Music("Song 2", "Artist 1", album1, 4, 15, true);
+        Music music3 = new Music("Song 3", "Artist 2", album2, 5, 0, false);
+
+        collection.addAlbum(album1);
+        collection.addAlbum(album2);
+
+        collection.addSong(music1);
+        collection.addSong(music2);
+        collection.addSong(music3);
+
+        List<Music> searchResultByTitle = collection.searchSongs("Song");
+        assertEquals(3, searchResultByTitle.size());
+
+        List<Music> searchResultByArtist = collection.searchSongs("Artist 1");
+        assertEquals(2, searchResultByArtist.size());
+
+        List<Music> searchResultEspecificSong = collection.searchSongs("Song 1");
+        assertEquals(1, searchResultEspecificSong.size());
+        assertEquals("Song 1", searchResultEspecificSong.get(0).getTitle());
+        }
+   
     @Test
     public void testIsFavorite() {
         Music music = new Music("Song 1", "Artist 1", null, 3, 30, false);
